@@ -4,3 +4,4 @@ clean:
 	rm -rf build
 	rm -rf tests/__pycache__
 	rm -rf simple_esn/__pycache__
+	rm -rf examples/__pycache__

@@ -25,7 +25,7 @@ from numpy import atleast_2d, loadtxt
 
 from simple_esn.simple_esn import SimpleESN
 
-from sklearn.grid_search import GridSearchCV
+from sklearn.model_selection import GridSearchCV
 from sklearn.linear_model import Ridge
 from sklearn.metrics import mean_squared_error
 from sklearn.pipeline import Pipeline
@@ -64,7 +64,7 @@ if __name__ == '__main__':
     testplot.plot(y_pred[-500:], 'g', label='prediction')
     testplot.set_title('Prediction (MSE %0.3f)' % err)
     testplot.legend(loc='lower right')
-    plt.tight_layout(0.5)
+    plt.tight_layout()
 
     # Grid search
     pipeline = Pipeline([('esn', SimpleESN(n_readout=1000)),
@@ -101,5 +101,5 @@ if __name__ == '__main__':
     testplot.plot(y_pred[-500:], 'g', label='prediction')
     testplot.set_title('Prediction after GridSearch (MSE %0.3f)' % err)
     testplot.legend(loc='lower right')
-    plt.tight_layout(0.5)
+    plt.tight_layout()
     plt.show()
